@@ -2,15 +2,13 @@ import random
 
 caracteres_aceptados = "abcdefghijklmnñopqrstuvwxyz"
 
-palabras = [('p', 'e', 'l', 'o', 't', 'a'), ('c', 'a', 'n', 'c', 'h', 'a'), ('p', 'a', 'r', 't', 'i', 'd', 'o'), ('g', 'o', 'l')]
+palabras = ['pelota', 'cancha', 'partido', 'gol']
 
 palabra_random = random.choice(palabras)
 
 palabra_oculta = ["_" for _ in palabra_random]
 
-palabra_elegida = "".join(palabra_random)
-
-longitud_palabra = len(palabra_elegida)
+longitud_palabra = len(palabra_random)
 
 intentos = 7
 
@@ -25,8 +23,8 @@ while True:
 
     if len(letra_ingresada) > 1:
         
-        if letra_ingresada == palabra_elegida:
-            print("\n¡Felicitaciones! Has adivinado la palabra.\nPalabra: ", palabra_elegida, "\nTu número de intentos restantes es: ", intentos)
+        if letra_ingresada == palabra_random:
+            print("\n¡Felicitaciones! Has adivinado la palabra.\nLa palabra oculta era: ", palabra_random.capitalize())
             break
         else: 
             print("GAME OVER\nNo has adivinado la palabra y has perdido.")
@@ -50,11 +48,14 @@ while True:
         intentos -= 1
 
     if "_" not in palabra_oculta:
-        print("\n¡Felicidades! Has adivinado la palabra: ", palabra_elegida, "\nTu número de intentos restantes es ", intentos)
+        print("\n¡Felicidades! Has adivinado la palabra: ", palabra_random.capitalize())
         break
 
     if intentos == 0:
         print("GAME OVER\nTu número de intentos es 0.")
         break
+    
+
+
     
 
