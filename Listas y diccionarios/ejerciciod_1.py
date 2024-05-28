@@ -1,8 +1,8 @@
 # Contar letras: Escribe una función que reciba una cadena y devuelva un diccionario
 # con la frecuencia de cada letra en la cadena.
-def cadena_a_diccionario(lista):
+def cadena_a_diccionario(cadena):
     diccionario = {}
-    for i in lista:
+    for i in cadena:
         if i in diccionario:
             diccionario[i] += 1
         else:
